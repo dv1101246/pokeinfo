@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Col, Container, Form, Row, Spinner } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { getPokemons } from "../Services/Common";
 import { Card } from "react-bootstrap";
@@ -32,6 +32,17 @@ function Pokemons () {
 
     return(
         <Container fluid>
+            <Row>
+                <Col>
+                    <Form className='m-3'>
+                        <Form.Label>Search</Form.Label>
+                        <Form.Control type='text' placeholder="Search Pokemon"></Form.Control>
+                        <Form.Text muted>
+                            type here to search for the Pokemon you want to look at
+                        </Form.Text>
+                    </Form>
+                </Col>
+            </Row>
             <Row>
                 {pokemons.map((item,index) => {
                     return (<Col>
