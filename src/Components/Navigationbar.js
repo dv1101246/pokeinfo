@@ -16,10 +16,19 @@ function Navigationbar() {
               <Nav.Link >Home</Nav.Link>
             </LinkContainer>
           </Nav>
+          <Nav className="me-auto">
+            <LinkContainer to="/">
+              <Nav.Link >About</Nav.Link>
+            </LinkContainer>
+          </Nav>
+          <Nav className="me-auto">
+            <LinkContainer to="/">
+              <Nav.Link >Games</Nav.Link>
+            </LinkContainer>
+          </Nav>
         </Container>
       </Navbar>
     );
   }
   
   export default Navigationbar;
-  

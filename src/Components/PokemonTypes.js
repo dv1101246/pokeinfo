@@ -9,15 +9,16 @@ export default function PokemonTypes() {
     const [types, setData] = useState(null);
     const [isLoading, setLoading] = useState(true);
         
-    const getData = async () => {
-       const response = await getPokemonTypes();
-        setData(response);
-        setLoading(false);
-        };
-
 
     useEffect(() => {
-        getData();
+
+        const fetchData = async () => {
+            const response = await getPokemonTypes();
+             setData(response);
+             setLoading(false);
+        }
+        
+        fetchData();
     }, []);
 
     if(isLoading) {

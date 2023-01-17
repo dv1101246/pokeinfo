@@ -14,16 +14,17 @@ function Pokemon(){
     const [isLoading, setLoading] = useState(true);
 
 
-    const fetchData = async () => {
-        const response = await getPokemon(location.state.url);
-        setPokemon(response)
-        setLoading(false);
-        console.log(response)
-    }
-
     useEffect(() =>{
+
+        const fetchData = async () => {
+            const response = await getPokemon(location.state.url);
+            setPokemon(response)
+            setLoading(false);
+            console.log(response)
+        }
+
         fetchData();
-    },[]);
+    },[location]);
 
     if(!isLoading)
     {
